@@ -43,5 +43,10 @@ app.use("/uploads", express.static(UPLOADS_ROOT));
 plugins.forEach((plugin) => {
   app.use(plugin.path, plugin.router);
 });
-
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    message: "Campus RMS Backend Running"
+  });
+});
 export default app;
