@@ -20,7 +20,7 @@ app.use(express.urlencoded({
 // Configurable via CORS_ORIGINS (comma-separated) in .env — defaults cover
 // the common Vite/TanStack Start dev ports (5173, 3000). Set this explicitly
 // in production to your real client URL.
-const allowedOrigins = (process.env.CORS_ORIGINS")
+const allowedOrigins = (process.env.CORS_ORIGINS)
   .split(",")
   .map((o) => o.trim())
   .filter(Boolean);
