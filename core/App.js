@@ -18,9 +18,9 @@ app.use(express.urlencoded({
   limit: "50mb"
 }));
 // Configurable via CORS_ORIGINS (comma-separated) in .env — defaults cover
-// the common Vite/TanStack Start dev ports (5173, 3000, 8080). Set this
-// explicitly in production to your real client URL.
-const allowedOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173,http://localhost:3000,http://localhost:8080")
+// local dev ports and the production Vercel deployment. Set CORS_ORIGINS
+// explicitly in Railway/production to override.
+const allowedOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173,http://localhost:3000,http://localhost:8080,https://crms-backend-xi.vercel.app")
   .split(",")
   .map((o) => o.trim())
   .filter(Boolean);
