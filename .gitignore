@@ -4,3 +4,8 @@ dist/
 build/
 coverage/
 .vscode/
+.DS_Store
+*.orig
+*.zip
+uploads/
+backups/

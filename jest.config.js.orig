@@ -1,9 +1,0 @@
-export default {
-  testEnvironment: "node",
-  verbose: true,
-  roots: ["<rootDir>/tests"],
-  transform: {
-    "^.+\\.[tj]s$": "babel-jest"
-  },
-  setupFilesAfterEnv: ["<rootDir>/tests/setup.js"]
-};
