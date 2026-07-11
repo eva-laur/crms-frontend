@@ -39,17 +39,19 @@ describe("Permission Service", () => {
   });
 
   test("Second call uses cache without DB hit", async () => {
+    // Use a non-admin role: admin bypasses DB entirely (always allowed),
+    // so Permission.findOne would never be called for admin.
     await Permission.create({
-      role: "admin",
+      role: "faculty",
       module: "users",
-      action: "delete",
+      action: "view",
       allowed: true,
     });
 
     const spy = jest.spyOn(Permission, "findOne");
 
-    await checkPermissionFromDB("admin", "users", "delete");
-    await checkPermissionFromDB("admin", "users", "delete");
+    await checkPermissionFromDB("faculty", "users", "view");
+    await checkPermissionFromDB("faculty", "users", "view");
 
     expect(spy).toHaveBeenCalledTimes(1);
 

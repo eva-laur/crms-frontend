@@ -20,6 +20,7 @@ beforeEach(async () => {
     email: "student1@example.com",
     password: "secret",
     role: "student",
+    matricule: "TEST-STU-001",
   });
 
   otherStudentUser = await User.create({
@@ -27,6 +28,7 @@ beforeEach(async () => {
     email: "student2@example.com",
     password: "secret",
     role: "student",
+    matricule: "TEST-STU-002",
   });
 
   adminUser = await User.create({
@@ -34,6 +36,7 @@ beforeEach(async () => {
     email: "admin@example.com",
     password: "secret",
     role: "admin",
+    matricule: "TEST-ADM-001",
   });
 
   resource = await Resource.create({

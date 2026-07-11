@@ -1,5 +1,7 @@
 import dotenv from "dotenv";
-dotenv.config();
+// override: true ensures the .env file values always win over any inherited
+// shell environment variables (e.g. a stale CORS_ORIGINS from a parent shell).
+dotenv.config({ override: true });
 
 import app from "./core/App.js";
 import connectDB from "./config/database.js";
